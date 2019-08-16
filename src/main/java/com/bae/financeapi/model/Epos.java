@@ -18,15 +18,15 @@ public class Epos {
 
 	private String postCode;
 
-	private Long latitude;
+	private Double latitude;
 
-	private Long longitude;
+	private Double longitude;
 
 	public Epos() {
 
 	}
 
-	public Epos(Long id, String vendor, String streetName, String postCode, Long latitude, Long longitude) {
+	public Epos(Long id, String vendor, String streetName, String postCode, Double latitude, Double longitude) {
 		Id = id;
 		this.vendor = vendor;
 		this.streetName = streetName;

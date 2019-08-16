@@ -20,9 +20,9 @@ public class PeopleBankAccount {
 
 	private String bank;
 
-	private String fornames;
+	private String forenames;
 
-	private String surnames;
+	private String surname;
 
 	@Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
@@ -33,13 +33,13 @@ public class PeopleBankAccount {
 
 	}
 
-	public PeopleBankAccount(Long bankAccountId, Long accountNumber, String bank, String fornames, String surnames,
+	public PeopleBankAccount(Long bankAccountId, Long accountNumber, String bank, String forenames, String surname,
 			Date dateOfBirth, String homeAddress) {
 		this.bankAccountId = bankAccountId;
 		this.accountNumber = accountNumber;
 		this.bank = bank;
-		this.fornames = fornames;
-		this.surnames = surnames;
+		this.forenames = forenames;
+		this.surname = surname;
 		this.dateOfBirth = dateOfBirth;
 		this.homeAddress = homeAddress;
 	}

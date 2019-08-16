@@ -1,9 +1,13 @@
 package com.bae.financeapi.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.Data;
 
@@ -19,7 +23,8 @@ public class AtmTransaction {
 
 	private Long atmId;
 
-	private String timeStamp;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date timeStamp;
 
 	private int amount;
 
@@ -29,7 +34,7 @@ public class AtmTransaction {
 
 	}
 
-	public AtmTransaction(Long bankCardNumber, Long atmId, String timeStamp, int amount, String type) {
+	public AtmTransaction(Long bankCardNumber, Long atmId, Date timeStamp, int amount, String type) {
 		this.bankCardNumber = bankCardNumber;
 		this.atmId = atmId;
 		this.timeStamp = timeStamp;

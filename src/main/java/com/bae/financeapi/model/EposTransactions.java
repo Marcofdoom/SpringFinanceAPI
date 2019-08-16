@@ -1,9 +1,13 @@
 package com.bae.financeapi.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.Data;
 
@@ -21,7 +25,8 @@ public class EposTransactions {
 
 	private Long payeeAccount;
 
-	private String timeStamp;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date timeStamp;
 
 	private Long amount;
 
@@ -29,7 +34,7 @@ public class EposTransactions {
 
 	}
 
-	public EposTransactions(Long eposId, Long bankCardNumber, Long payeeAccount, String timeStamp, Long amount) {
+	public EposTransactions(Long eposId, Long bankCardNumber, Long payeeAccount, Date timeStamp, Long amount) {
 		this.eposId = eposId;
 		this.bankCardNumber = bankCardNumber;
 		this.payeeAccount = payeeAccount;

@@ -12,7 +12,7 @@ public class BankCard {
 	@Id
 	private Long bankCardId;
 
-	private Long bankCardNumber;
+	private Long bankAccountId;
 
 	private Long cardNumber;
 
@@ -26,10 +26,10 @@ public class BankCard {
 
 	}
 
-	public BankCard(Long bankCardId, Long bankCardNumber, Long cardNumber, String sortCode, Long accountNumber,
+	public BankCard(Long bankCardId, Long bankAccountId, Long cardNumber, String sortCode, Long accountNumber,
 			String bank) {
 		this.bankCardId = bankCardId;
-		this.bankCardNumber = bankCardNumber;
+		this.bankAccountId = bankAccountId;
 		this.cardNumber = cardNumber;
 		this.sortCode = sortCode;
 		this.accountNumber = accountNumber;
