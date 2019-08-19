@@ -18,16 +18,15 @@ public class AtmPoint {
 
 	private String postCode;
 
-	private Double latitude;
+	private Float latitude;
 
-	private Double longitude;
+	private Float longitude;
 
 	public AtmPoint() {
 
 	}
 
-	public AtmPoint(Long atmId, String operator, String streetName, String postCode, Double latitude,
-			Double longitude) {
+	public AtmPoint(Long atmId, String operator, String streetName, String postCode, Float latitude, Float longitude) {
 		this.atmId = atmId;
 		this.operator = operator;
 		this.streetName = streetName;

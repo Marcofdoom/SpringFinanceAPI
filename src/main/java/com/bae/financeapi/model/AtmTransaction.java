@@ -26,7 +26,7 @@ public class AtmTransaction {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date timeStamp;
 
-	private int amount;
+	private Integer amount;
 
 	private String type;
 
@@ -34,7 +34,7 @@ public class AtmTransaction {
 
 	}
 
-	public AtmTransaction(Long bankCardNumber, Long atmId, Date timeStamp, int amount, String type) {
+	public AtmTransaction(Long bankCardNumber, Long atmId, Date timeStamp, Integer amount, String type) {
 		this.bankCardNumber = bankCardNumber;
 		this.atmId = atmId;
 		this.timeStamp = timeStamp;
