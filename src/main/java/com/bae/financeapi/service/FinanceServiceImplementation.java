@@ -19,7 +19,7 @@ public class FinanceServiceImplementation implements FinanceService {
 	}
 
 	@Override
-	public List<PeopleBankAccount> getFiance(PeopleBankAccount peopleBankAccount) {
+	public List<PeopleBankAccount> getFinance(PeopleBankAccount peopleBankAccount) {
 
 		return peopleBankAccountRepository.findFinance(peopleBankAccount.getForenames(), peopleBankAccount.getSurname(),
 				peopleBankAccount.getHomeAddress(), peopleBankAccount.getDateOfBirth());

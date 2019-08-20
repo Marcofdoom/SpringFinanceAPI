@@ -9,5 +9,5 @@ import com.bae.financeapi.model.PeopleBankAccount;
 @Service
 public interface FinanceService {
 
-	public List<PeopleBankAccount> getFiance(PeopleBankAccount peopleBankAccount);
+	public List<PeopleBankAccount> getFinance(PeopleBankAccount peopleBankAccount);
 }

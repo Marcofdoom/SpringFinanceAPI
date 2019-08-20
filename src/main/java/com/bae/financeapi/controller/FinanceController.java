@@ -15,7 +15,7 @@ import com.bae.financeapi.model.PeopleBankAccount;
 import com.bae.financeapi.service.FinanceService;
 
 @RestController
-@RequestMapping("/Fniance")
+@RequestMapping("/Finance")
 public class FinanceController {
 
 	private FinanceService service;
@@ -42,6 +42,6 @@ public class FinanceController {
 		peopleBankAccountEntity.setHomeAddress(homeAddress);
 		peopleBankAccountEntity.setDateOfBirth(dateOfBirth);
 
-		return new ResponseEntity<>(service.getFiance(peopleBankAccountEntity), HttpStatus.OK);
+		return new ResponseEntity<>(service.getFinance(peopleBankAccountEntity), HttpStatus.OK);
 	}
 }
