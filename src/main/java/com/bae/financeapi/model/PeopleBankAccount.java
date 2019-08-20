@@ -14,9 +14,9 @@ import lombok.Data;
 public class PeopleBankAccount {
 
 	@Id
-	private Long bankAccountId;
-
 	private Long accountNumber;
+
+	private Long bankAccountId;
 
 	private String bank;
 

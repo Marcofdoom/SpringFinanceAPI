@@ -10,15 +10,15 @@ import lombok.Data;
 public class BankCard {
 
 	@Id
-	private Long bankCardId;
+	private Long cardNumber;
+
+	private Long accountNumber;
 
 	private Long bankAccountId;
 
-	private Long cardNumber;
+	private Long bankCardId;
 
 	private String sortCode;
-
-	private Long accountNumber;
 
 	private String bank;
 
@@ -26,13 +26,13 @@ public class BankCard {
 
 	}
 
-	public BankCard(Long bankCardId, Long bankAccountId, Long cardNumber, String sortCode, Long accountNumber,
+	public BankCard(Long cardNumber, Long accountNumber, Long bankAccountId, Long bankCardId, String sortCode,
 			String bank) {
-		this.bankCardId = bankCardId;
-		this.bankAccountId = bankAccountId;
 		this.cardNumber = cardNumber;
-		this.sortCode = sortCode;
 		this.accountNumber = accountNumber;
+		this.bankAccountId = bankAccountId;
+		this.bankCardId = bankCardId;
+		this.sortCode = sortCode;
 		this.bank = bank;
 	}
 }

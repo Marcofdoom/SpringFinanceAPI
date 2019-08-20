@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.bae.financeapi.model.PeopleBankAccount;
 
 @Repository
-public interface PeopleBankAccountRepository extends JpaRepository<PeopleBankAccount, Long> {
+public interface PeopleBankAccountRepository extends JpaRepository<PeopleBankAccount, Long>, PeopleBankAccountRepositoryCustom {
 
 }
