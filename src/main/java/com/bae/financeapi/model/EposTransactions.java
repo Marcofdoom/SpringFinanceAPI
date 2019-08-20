@@ -9,9 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import lombok.Data;
-
-@Data
 @Entity
 public class EposTransactions {
 
@@ -39,6 +36,54 @@ public class EposTransactions {
 		this.bankCardNumber = bankCardNumber;
 		this.payeeAccount = payeeAccount;
 		this.timeStamp = timeStamp;
+		this.amount = amount;
+	}
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public Long getEposId() {
+		return eposId;
+	}
+
+	public void setEposId(Long eposId) {
+		this.eposId = eposId;
+	}
+
+	public Long getBankCardNumber() {
+		return bankCardNumber;
+	}
+
+	public void setBankCardNumber(Long bankCardNumber) {
+		this.bankCardNumber = bankCardNumber;
+	}
+
+	public Long getPayeeAccount() {
+		return payeeAccount;
+	}
+
+	public void setPayeeAccount(Long payeeAccount) {
+		this.payeeAccount = payeeAccount;
+	}
+
+	public Date getTimeStamp() {
+		return timeStamp;
+	}
+
+	public void setTimeStamp(Date timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+
+	public Long getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Long amount) {
 		this.amount = amount;
 	}
 }

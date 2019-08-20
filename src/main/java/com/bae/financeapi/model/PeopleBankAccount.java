@@ -7,9 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import lombok.Data;
-
-@Data
 @Entity
 public class PeopleBankAccount {
 
@@ -41,6 +38,62 @@ public class PeopleBankAccount {
 		this.forenames = forenames;
 		this.surname = surname;
 		this.dateOfBirth = dateOfBirth;
+		this.homeAddress = homeAddress;
+	}
+
+	public Long getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(Long accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public Long getBankAccountId() {
+		return bankAccountId;
+	}
+
+	public void setBankAccountId(Long bankAccountId) {
+		this.bankAccountId = bankAccountId;
+	}
+
+	public String getBank() {
+		return bank;
+	}
+
+	public void setBank(String bank) {
+		this.bank = bank;
+	}
+
+	public String getForenames() {
+		return forenames;
+	}
+
+	public void setForenames(String forenames) {
+		this.forenames = forenames;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getHomeAddress() {
+		return homeAddress;
+	}
+
+	public void setHomeAddress(String homeAddress) {
 		this.homeAddress = homeAddress;
 	}
 }

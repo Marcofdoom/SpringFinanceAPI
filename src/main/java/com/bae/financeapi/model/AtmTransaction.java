@@ -11,7 +11,6 @@ import javax.persistence.TemporalType;
 
 import lombok.Data;
 
-@Data
 @Entity
 public class AtmTransaction {
 
@@ -39,6 +38,54 @@ public class AtmTransaction {
 		this.atmId = atmId;
 		this.timeStamp = timeStamp;
 		this.amount = amount;
+		this.type = type;
+	}
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public Long getBankCardNumber() {
+		return bankCardNumber;
+	}
+
+	public void setBankCardNumber(Long bankCardNumber) {
+		this.bankCardNumber = bankCardNumber;
+	}
+
+	public Long getAtmId() {
+		return atmId;
+	}
+
+	public void setAtmId(Long atmId) {
+		this.atmId = atmId;
+	}
+
+	public Date getTimeStamp() {
+		return timeStamp;
+	}
+
+	public void setTimeStamp(Date timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+
+	public Integer getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
 		this.type = type;
 	}
 }
