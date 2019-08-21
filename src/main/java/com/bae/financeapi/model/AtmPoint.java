@@ -13,7 +13,7 @@ public class AtmPoint {
 
 	private String streetName;
 
-	private String postCode;
+	private String postcode;
 
 	private Float latitude;
 
@@ -23,11 +23,11 @@ public class AtmPoint {
 
 	}
 
-	public AtmPoint(Long atmId, String operator, String streetName, String postCode, Float latitude, Float longitude) {
+	public AtmPoint(Long atmId, String operator, String streetName, String postcode, Float latitude, Float longitude) {
 		this.atmId = atmId;
 		this.operator = operator;
 		this.streetName = streetName;
-		this.postCode = postCode;
+		this.postcode = postcode;
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
@@ -56,12 +56,12 @@ public class AtmPoint {
 		this.streetName = streetName;
 	}
 
-	public String getPostCode() {
-		return postCode;
+	public String getPostcode() {
+		return postcode;
 	}
 
-	public void setPostCode(String postCode) {
-		this.postCode = postCode;
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
 	}
 
 	public Float getLatitude() {

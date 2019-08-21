@@ -18,12 +18,12 @@ public class EposTransactions {
 
 	private Long eposId;
 
-	private Long bankCardNumber;
+	private Long bankcardNumber;
 
 	private Long payeeAccount;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date timeStamp;
+	private Date timestamp;
 
 	private Long amount;
 
@@ -31,11 +31,11 @@ public class EposTransactions {
 
 	}
 
-	public EposTransactions(Long eposId, Long bankCardNumber, Long payeeAccount, Date timeStamp, Long amount) {
+	public EposTransactions(Long eposId, Long bankcardNumber, Long payeeAccount, Date timestamp, Long amount) {
 		this.eposId = eposId;
-		this.bankCardNumber = bankCardNumber;
+		this.bankcardNumber = bankcardNumber;
 		this.payeeAccount = payeeAccount;
-		this.timeStamp = timeStamp;
+		this.timestamp = timestamp;
 		this.amount = amount;
 	}
 
@@ -55,12 +55,12 @@ public class EposTransactions {
 		this.eposId = eposId;
 	}
 
-	public Long getBankCardNumber() {
-		return bankCardNumber;
+	public Long getBankcardNumber() {
+		return bankcardNumber;
 	}
 
-	public void setBankCardNumber(Long bankCardNumber) {
-		this.bankCardNumber = bankCardNumber;
+	public void setBankcardNumber(Long bankcardNumber) {
+		this.bankcardNumber = bankcardNumber;
 	}
 
 	public Long getPayeeAccount() {
@@ -71,12 +71,12 @@ public class EposTransactions {
 		this.payeeAccount = payeeAccount;
 	}
 
-	public Date getTimeStamp() {
-		return timeStamp;
+	public Date getTimestamp() {
+		return timestamp;
 	}
 
-	public void setTimeStamp(Date timeStamp) {
-		this.timeStamp = timeStamp;
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	public Long getAmount() {

@@ -18,12 +18,12 @@ public class AtmTransaction {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 
-	private Long bankCardNumber;
+	private Long bankcardNumber;
 
 	private Long atmId;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date timeStamp;
+	private Date timestamp;
 
 	private Integer amount;
 
@@ -33,10 +33,10 @@ public class AtmTransaction {
 
 	}
 
-	public AtmTransaction(Long bankCardNumber, Long atmId, Date timeStamp, Integer amount, String type) {
-		this.bankCardNumber = bankCardNumber;
+	public AtmTransaction(Long bankcardNumber, Long atmId, Date timestamp, Integer amount, String type) {
+		this.bankcardNumber = bankcardNumber;
 		this.atmId = atmId;
-		this.timeStamp = timeStamp;
+		this.timestamp = timestamp;
 		this.amount = amount;
 		this.type = type;
 	}
@@ -49,12 +49,12 @@ public class AtmTransaction {
 		Id = id;
 	}
 
-	public Long getBankCardNumber() {
-		return bankCardNumber;
+	public Long getBankcardNumber() {
+		return bankcardNumber;
 	}
 
-	public void setBankCardNumber(Long bankCardNumber) {
-		this.bankCardNumber = bankCardNumber;
+	public void setBankcardNumber(Long bankcardNumber) {
+		this.bankcardNumber = bankcardNumber;
 	}
 
 	public Long getAtmId() {
@@ -65,12 +65,12 @@ public class AtmTransaction {
 		this.atmId = atmId;
 	}
 
-	public Date getTimeStamp() {
-		return timeStamp;
+	public Date getTimestamp() {
+		return timestamp;
 	}
 
-	public void setTimeStamp(Date timeStamp) {
-		this.timeStamp = timeStamp;
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	public Integer getAmount() {

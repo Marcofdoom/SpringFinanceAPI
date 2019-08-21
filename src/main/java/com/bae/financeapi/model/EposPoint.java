@@ -4,40 +4,40 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Epos {
+public class EposPoint {
 
 	@Id
-	private Long Id;
+	private Long eposId;
 
 	private String vendor;
 
 	private String streetName;
 
-	private String postCode;
+	private String postcode;
 
 	private Float latitude;
 
 	private Float longitude;
 
-	public Epos() {
+	public EposPoint() {
 
 	}
 
-	public Epos(Long id, String vendor, String streetName, String postCode, Float latitude, Float longitude) {
-		this.Id = id;
+	public EposPoint(Long eposId, String vendor, String streetName, String postcode, Float latitude, Float longitude) {
+		this.eposId = eposId;
 		this.vendor = vendor;
 		this.streetName = streetName;
-		this.postCode = postCode;
+		this.postcode = postcode;
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
 
-	public Long getId() {
-		return Id;
+	public Long getEposId() {
+		return eposId;
 	}
 
-	public void setId(Long id) {
-		Id = id;
+	public void setEposId(Long eposId) {
+		this.eposId = eposId;
 	}
 
 	public String getVendor() {
@@ -56,12 +56,12 @@ public class Epos {
 		this.streetName = streetName;
 	}
 
-	public String getPostCode() {
-		return postCode;
+	public String getPostcode() {
+		return postcode;
 	}
 
-	public void setPostCode(String postCode) {
-		this.postCode = postCode;
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
 	}
 
 	public Float getLatitude() {

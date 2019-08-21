@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class BankCard {
+public class Bankcard {
 
 	@Id
 	private Long cardNumber;
@@ -13,22 +13,22 @@ public class BankCard {
 
 	private Long bankAccountId;
 
-	private Long bankCardId;
+	private Long bankcardId;
 
 	private String sortCode;
 
 	private String bank;
 
-	public BankCard() {
+	public Bankcard() {
 
 	}
 
-	public BankCard(Long cardNumber, Long accountNumber, Long bankAccountId, Long bankCardId, String sortCode,
+	public Bankcard(Long cardNumber, Long accountNumber, Long bankAccountId, Long bankcardId, String sortCode,
 			String bank) {
 		this.cardNumber = cardNumber;
 		this.accountNumber = accountNumber;
 		this.bankAccountId = bankAccountId;
-		this.bankCardId = bankCardId;
+		this.bankcardId = bankcardId;
 		this.sortCode = sortCode;
 		this.bank = bank;
 	}
@@ -57,12 +57,12 @@ public class BankCard {
 		this.bankAccountId = bankAccountId;
 	}
 
-	public Long getBankCardId() {
-		return bankCardId;
+	public Long getBankcardId() {
+		return bankcardId;
 	}
 
-	public void setBankCardId(Long bankCardId) {
-		this.bankCardId = bankCardId;
+	public void setBankcardId(Long bankcardId) {
+		this.bankcardId = bankcardId;
 	}
 
 	public String getSortCode() {
