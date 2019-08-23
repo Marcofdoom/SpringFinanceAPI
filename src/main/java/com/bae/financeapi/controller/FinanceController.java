@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bae.financeapi.model.PeopleBankAccount;
 import com.bae.financeapi.service.FinanceService;
+import com.bae.financeapi.service.TransactionService;
 
 @RestController
 @RequestMapping("/Finance")
@@ -20,13 +21,17 @@ public class FinanceController {
 
 	private FinanceService service;
 
+	private TransactionService transactionService;
+
 	public FinanceController() {
 
 	}
 
 	@Autowired
-	public FinanceController(FinanceService service) {
+	public FinanceController(FinanceService service, TransactionService transactionService) {
 		this.service = service;
+		this.transactionService = transactionService;
+
 	}
 
 	@GetMapping("/getFinance")
@@ -43,5 +48,11 @@ public class FinanceController {
 		peopleBankAccountEntity.setDateOfBirth(dateOfBirth);
 
 		return new ResponseEntity<>(service.getFinance(peopleBankAccountEntity), HttpStatus.OK);
+	}
+
+	@GetMapping("/getTransactions")
+	public ResponseEntity<Object> getTransactionsDTO(
+			@RequestParam(value = "accountNumber", required = false) String accountNumber) {
+		return new ResponseEntity<>(transactionService.getTransactionsDTO(accountNumber), HttpStatus.OK);
 	}
 }

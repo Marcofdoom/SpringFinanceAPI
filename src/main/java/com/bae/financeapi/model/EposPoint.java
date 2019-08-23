@@ -1,7 +1,10 @@
 package com.bae.financeapi.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class EposPoint {
@@ -18,6 +21,9 @@ public class EposPoint {
 	private Float latitude;
 
 	private Float longitude;
+
+	@OneToMany(mappedBy = "eposId")
+	private List<EposTransactions> eposTransactions;
 
 	public EposPoint() {
 

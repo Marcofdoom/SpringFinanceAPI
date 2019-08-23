@@ -61,4 +61,5 @@ public class PeopleBankAccountRepositoryCustomImpl implements PeopleBankAccountR
 
 		return query.getResultList();
 	}
+
 }
