@@ -11,4 +11,5 @@ import com.bae.financeapi.model.PeopleBankAccount;
 public interface PeopleBankAccountRepositoryCustom {
 
 	public List<PeopleBankAccount> findFinance(String forenames, String surname, String homeAddress, Date dateOfBirth);
+
 }

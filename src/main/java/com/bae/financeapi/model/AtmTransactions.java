@@ -6,34 +6,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import lombok.Data;
-
 @Entity
-public class AtmTransaction {
+public class AtmTransactions {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 
-	private Long bankcardNumber;
+	@ManyToOne
+	@JoinColumn(name = "bankcard_number")
+	private Bankcard bankcardNumber;
 
-	private Long atmId;
+	@ManyToOne
+	@JoinColumn(name = "atm_id")
+	private AtmPoint atmId;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date timestamp;
 
-	private Integer amount;
+	private Float amount;
 
 	private String type;
 
-	public AtmTransaction() {
+	public AtmTransactions() {
 
 	}
 
-	public AtmTransaction(Long bankcardNumber, Long atmId, Date timestamp, Integer amount, String type) {
+	public AtmTransactions(Bankcard bankcardNumber, AtmPoint atmId, Date timestamp, Float amount, String type) {
 		this.bankcardNumber = bankcardNumber;
 		this.atmId = atmId;
 		this.timestamp = timestamp;
@@ -49,19 +53,19 @@ public class AtmTransaction {
 		Id = id;
 	}
 
-	public Long getBankcardNumber() {
+	public Bankcard getBankcardNumber() {
 		return bankcardNumber;
 	}
 
-	public void setBankcardNumber(Long bankcardNumber) {
+	public void setBankcardNumber(Bankcard bankcardNumber) {
 		this.bankcardNumber = bankcardNumber;
 	}
 
-	public Long getAtmId() {
+	public AtmPoint getAtmId() {
 		return atmId;
 	}
 
-	public void setAtmId(Long atmId) {
+	public void setAtmId(AtmPoint atmId) {
 		this.atmId = atmId;
 	}
 
@@ -73,11 +77,11 @@ public class AtmTransaction {
 		this.timestamp = timestamp;
 	}
 
-	public Integer getAmount() {
+	public Float getAmount() {
 		return amount;
 	}
 
-	public void setAmount(Integer amount) {
+	public void setAmount(Float amount) {
 		this.amount = amount;
 	}
 
