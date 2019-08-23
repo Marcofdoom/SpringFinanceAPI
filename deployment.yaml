@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skyre-finance
+  labels: 
+    app: skyre-finance
+spec:
+  selector:
+    matchLabels:
+      app: skyre-finance
+  template:
+    metadata:
+      labels:
+        app: skyre-finance
+    spec:
+      containers:
+      - name: skyre-finance
+        image: eyjafjalla/skyre-finance:latest
+        ports:
+        - containerPort: 8083
