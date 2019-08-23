@@ -12,38 +12,37 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class EposTransactions {
+public class AtmTransactions {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 
 	@ManyToOne
-	@JoinColumn(name = "epos_id")
-	private EposPoint eposId;
-
-	@ManyToOne
 	@JoinColumn(name = "bankcard_number")
 	private Bankcard bankcardNumber;
 
-	private Long payeeAccount;
+	@ManyToOne
+	@JoinColumn(name = "atm_id")
+	private AtmPoint atmId;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date timestamp;
 
 	private Float amount;
 
-	public EposTransactions() {
+	private String type;
+
+	public AtmTransactions() {
 
 	}
 
-	public EposTransactions(EposPoint eposId, Bankcard bankcardNumber, Long payeeAccount, Date timestamp,
-			Float amount) {
-		this.eposId = eposId;
+	public AtmTransactions(Bankcard bankcardNumber, AtmPoint atmId, Date timestamp, Float amount, String type) {
 		this.bankcardNumber = bankcardNumber;
-		this.payeeAccount = payeeAccount;
+		this.atmId = atmId;
 		this.timestamp = timestamp;
 		this.amount = amount;
+		this.type = type;
 	}
 
 	public Long getId() {
@@ -54,14 +53,6 @@ public class EposTransactions {
 		Id = id;
 	}
 
-	public EposPoint getEposId() {
-		return eposId;
-	}
-
-	public void setEposId(EposPoint eposId) {
-		this.eposId = eposId;
-	}
-
 	public Bankcard getBankcardNumber() {
 		return bankcardNumber;
 	}
@@ -70,12 +61,12 @@ public class EposTransactions {
 		this.bankcardNumber = bankcardNumber;
 	}
 
-	public Long getPayeeAccount() {
-		return payeeAccount;
+	public AtmPoint getAtmId() {
+		return atmId;
 	}
 
-	public void setPayeeAccount(Long payeeAccount) {
-		this.payeeAccount = payeeAccount;
+	public void setAtmId(AtmPoint atmId) {
+		this.atmId = atmId;
 	}
 
 	public Date getTimestamp() {
@@ -92,5 +83,13 @@ public class EposTransactions {
 
 	public void setAmount(Float amount) {
 		this.amount = amount;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }

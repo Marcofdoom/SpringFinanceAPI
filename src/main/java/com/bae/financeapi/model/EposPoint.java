@@ -7,12 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class AtmPoint {
+public class EposPoint {
 
 	@Id
-	private Long atmId;
+	private Long eposId;
 
-	private String operator;
+	private String vendor;
 
 	private String streetName;
 
@@ -22,36 +22,36 @@ public class AtmPoint {
 
 	private Float longitude;
 
-	@OneToMany(mappedBy = "atmId")
-	private List<AtmTransactions> atmTransactions;
+	@OneToMany(mappedBy = "eposId")
+	private List<EposTransactions> eposTransactions;
 
-	public AtmPoint() {
+	public EposPoint() {
 
 	}
 
-	public AtmPoint(Long atmId, String operator, String streetName, String postcode, Float latitude, Float longitude) {
-		this.atmId = atmId;
-		this.operator = operator;
+	public EposPoint(Long eposId, String vendor, String streetName, String postcode, Float latitude, Float longitude) {
+		this.eposId = eposId;
+		this.vendor = vendor;
 		this.streetName = streetName;
 		this.postcode = postcode;
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
 
-	public Long getAtmId() {
-		return atmId;
+	public Long getEposId() {
+		return eposId;
 	}
 
-	public void setAtmId(Long atmId) {
-		this.atmId = atmId;
+	public void setEposId(Long eposId) {
+		this.eposId = eposId;
 	}
 
-	public String getOperator() {
-		return operator;
+	public String getVendor() {
+		return vendor;
 	}
 
-	public void setOperator(String operator) {
-		this.operator = operator;
+	public void setVendor(String vendor) {
+		this.vendor = vendor;
 	}
 
 	public String getStreetName() {

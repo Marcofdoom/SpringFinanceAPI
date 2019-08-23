@@ -1,4 +1,4 @@
-package com.bae.anprapi;
+package com.bae.financeapi;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
