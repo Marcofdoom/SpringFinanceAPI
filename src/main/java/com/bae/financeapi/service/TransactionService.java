@@ -10,5 +10,4 @@ import com.bae.financeapi.model.DTO.TransactionsDTO;
 public interface TransactionService {
 
 	List<TransactionsDTO> getTransactionsDTO(String accountNumber);
-
 }

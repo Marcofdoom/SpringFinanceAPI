@@ -21,16 +21,13 @@ public class FinanceController {
 
 	private FinanceService service;
 
-	private TransactionService transactionService;
-
 	public FinanceController() {
 
 	}
 
 	@Autowired
-	public FinanceController(FinanceService service, TransactionService transactionService) {
+	public FinanceController(FinanceService service) {
 		this.service = service;
-		this.transactionService = transactionService;
 
 	}
 
@@ -40,19 +37,13 @@ public class FinanceController {
 			@RequestParam(value = "homeAddress", required = false) String homeAddress,
 			@RequestParam(value = "dateOfBirth", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateOfBirth) {
 
-		PeopleBankAccount peopleBankAccountEntity = new PeopleBankAccount();
+		PeopleBankAccount peopleBankAccount = new PeopleBankAccount();
 
-		peopleBankAccountEntity.setForenames(forenames);
-		peopleBankAccountEntity.setSurname(surname);
-		peopleBankAccountEntity.setHomeAddress(homeAddress);
-		peopleBankAccountEntity.setDateOfBirth(dateOfBirth);
+		peopleBankAccount.setForenames(forenames);
+		peopleBankAccount.setSurname(surname);
+		peopleBankAccount.setHomeAddress(homeAddress);
+		peopleBankAccount.setDateOfBirth(dateOfBirth);
 
-		return new ResponseEntity<>(service.getFinance(peopleBankAccountEntity), HttpStatus.OK);
-	}
-
-	@GetMapping("/getTransactions")
-	public ResponseEntity<Object> getTransactionsDTO(
-			@RequestParam(value = "accountNumber", required = false) String accountNumber) {
-		return new ResponseEntity<>(transactionService.getTransactionsDTO(accountNumber), HttpStatus.OK);
+		return new ResponseEntity<>(service.findPeopleBankAccount(peopleBankAccount), HttpStatus.OK);
 	}
 }

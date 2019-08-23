@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.bae.financeapi.model.DTO.TransactionsDTO;
-import com.bae.financeapi.repository.AtmTransactionRepository;
+import com.bae.financeapi.repository.atmtransactions.AtmTransactionsRepository;
 
 @Service
 public class TransactionServiceImpl implements TransactionService {
 
-	private AtmTransactionRepository repository;
+	private AtmTransactionsRepository repository;
 
-	public TransactionServiceImpl(AtmTransactionRepository repository) {
+	public TransactionServiceImpl(AtmTransactionsRepository repository) {
 		this.repository = repository;
 	}
 

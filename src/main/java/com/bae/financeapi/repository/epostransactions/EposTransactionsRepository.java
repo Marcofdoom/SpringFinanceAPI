@@ -1,4 +1,4 @@
-package com.bae.financeapi.repository;
+package com.bae.financeapi.repository.epostransactions;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
