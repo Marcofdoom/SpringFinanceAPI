@@ -1,4 +1,4 @@
-package com.bae.financeapi.util;
+package com.bae.financeapi.dto;
 
 public enum TransactionType {
 

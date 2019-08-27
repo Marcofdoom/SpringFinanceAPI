@@ -1,4 +1,4 @@
-package com.bae.financeapi.model;
+package com.bae.financeapi.domain.model;
 
 import java.util.List;
 

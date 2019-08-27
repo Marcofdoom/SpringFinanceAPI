@@ -1,4 +1,4 @@
-package com.bae.financeapi.model;
+package com.bae.financeapi.domain.model;
 
 import java.util.List;
 
@@ -7,12 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class EposPoint {
+public class AtmPoint {
 
 	@Id
-	private Long eposId;
+	private Long atmId;
 
-	private String vendor;
+	private String operator;
 
 	private String streetName;
 
@@ -22,36 +22,36 @@ public class EposPoint {
 
 	private Float longitude;
 
-	@OneToMany(mappedBy = "eposId")
-	private List<EposTransactions> eposTransactions;
+	@OneToMany(mappedBy = "atmId")
+	private List<AtmTransactions> atmTransactions;
 
-	public EposPoint() {
+	public AtmPoint() {
 
 	}
 
-	public EposPoint(Long eposId, String vendor, String streetName, String postcode, Float latitude, Float longitude) {
-		this.eposId = eposId;
-		this.vendor = vendor;
+	public AtmPoint(Long atmId, String operator, String streetName, String postcode, Float latitude, Float longitude) {
+		this.atmId = atmId;
+		this.operator = operator;
 		this.streetName = streetName;
 		this.postcode = postcode;
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
 
-	public Long getEposId() {
-		return eposId;
+	public Long getAtmId() {
+		return atmId;
 	}
 
-	public void setEposId(Long eposId) {
-		this.eposId = eposId;
+	public void setAtmId(Long atmId) {
+		this.atmId = atmId;
 	}
 
-	public String getVendor() {
-		return vendor;
+	public String getOperator() {
+		return operator;
 	}
 
-	public void setVendor(String vendor) {
-		this.vendor = vendor;
+	public void setOperator(String operator) {
+		this.operator = operator;
 	}
 
 	public String getStreetName() {

@@ -1,8 +1,6 @@
-package com.bae.financeapi.model.DTO;
+package com.bae.financeapi.dto;
 
 import java.util.Date;
-
-import com.bae.financeapi.util.TransactionType;
 
 public class TransactionsDTO {
 
@@ -20,7 +18,7 @@ public class TransactionsDTO {
 
 	private String accountNumber;
 
-	private TransactionType type;
+	private TransactionType transactionType;
 
 	public TransactionsDTO(Date timestamp, Float amount, String company, String streetName, Float latitude,
 			Float longitude, String accountNumber) {
@@ -57,12 +55,12 @@ public class TransactionsDTO {
 		this.amount = amount;
 	}
 
-	public TransactionType getType() {
-		return type;
+	public TransactionType getTransactionType() {
+		return transactionType;
 	}
 
-	public void setType(TransactionType type) {
-		this.type = type;
+	public void setTransactionType(TransactionType transactionType) {
+		this.transactionType = transactionType;
 	}
 
 	public String getCompany() {
@@ -96,5 +94,4 @@ public class TransactionsDTO {
 	public void setLongitude(Float longitude) {
 		this.longitude = longitude;
 	}
-
 }
