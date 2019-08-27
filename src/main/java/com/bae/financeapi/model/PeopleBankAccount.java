@@ -1,9 +1,11 @@
 package com.bae.financeapi.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -11,7 +13,7 @@ import javax.persistence.TemporalType;
 public class PeopleBankAccount {
 
 	@Id
-	private Long accountNumber;
+	private String accountNumber;
 
 	private Long bankAccountId;
 
@@ -26,11 +28,14 @@ public class PeopleBankAccount {
 
 	private String homeAddress;
 
+	@OneToMany(mappedBy = "accountNumber")
+	private List<Bankcard> bankcards;
+
 	public PeopleBankAccount() {
 
 	}
 
-	public PeopleBankAccount(Long bankAccountId, Long accountNumber, String bank, String forenames, String surname,
+	public PeopleBankAccount(Long bankAccountId, String accountNumber, String bank, String forenames, String surname,
 			Date dateOfBirth, String homeAddress) {
 		this.bankAccountId = bankAccountId;
 		this.accountNumber = accountNumber;
@@ -41,11 +46,11 @@ public class PeopleBankAccount {
 		this.homeAddress = homeAddress;
 	}
 
-	public Long getAccountNumber() {
+	public String getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(Long accountNumber) {
+	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 

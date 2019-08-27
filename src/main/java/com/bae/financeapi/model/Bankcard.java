@@ -1,15 +1,22 @@
 package com.bae.financeapi.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Bankcard {
 
 	@Id
-	private Long cardNumber;
+	private String cardNumber;
 
-	private Long accountNumber;
+	@ManyToOne
+	@JoinColumn(name = "account_number")
+	private PeopleBankAccount accountNumber;
 
 	private Long bankAccountId;
 
@@ -19,12 +26,18 @@ public class Bankcard {
 
 	private String bank;
 
+	@OneToMany(mappedBy = "bankcardNumber")
+	private List<EposTransactions> eposTransactions;
+
+	@OneToMany(mappedBy = "bankcardNumber")
+	private List<AtmTransactions> atmTransactions;
+
 	public Bankcard() {
 
 	}
 
-	public Bankcard(Long cardNumber, Long accountNumber, Long bankAccountId, Long bankcardId, String sortCode,
-			String bank) {
+	public Bankcard(String cardNumber, PeopleBankAccount accountNumber, Long bankAccountId, Long bankcardId,
+			String sortCode, String bank) {
 		this.cardNumber = cardNumber;
 		this.accountNumber = accountNumber;
 		this.bankAccountId = bankAccountId;
@@ -33,19 +46,19 @@ public class Bankcard {
 		this.bank = bank;
 	}
 
-	public Long getCardNumber() {
+	public String getCardNumber() {
 		return cardNumber;
 	}
 
-	public void setCardNumber(Long cardNumber) {
+	public void setCardNumber(String cardNumber) {
 		this.cardNumber = cardNumber;
 	}
 
-	public Long getAccountNumber() {
+	public PeopleBankAccount getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(Long accountNumber) {
+	public void setAccountNumber(PeopleBankAccount accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 

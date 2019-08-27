@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bae.financeapi.model.PeopleBankAccount;
 import com.bae.financeapi.service.FinanceService;
+import com.bae.financeapi.service.TransactionService;
 
 @RestController
 @RequestMapping("/Finance")
@@ -27,6 +28,7 @@ public class FinanceController {
 	@Autowired
 	public FinanceController(FinanceService service) {
 		this.service = service;
+
 	}
 
 	@GetMapping("/getFinance")
@@ -35,13 +37,13 @@ public class FinanceController {
 			@RequestParam(value = "homeAddress", required = false) String homeAddress,
 			@RequestParam(value = "dateOfBirth", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateOfBirth) {
 
-		PeopleBankAccount peopleBankAccountEntity = new PeopleBankAccount();
+		PeopleBankAccount peopleBankAccount = new PeopleBankAccount();
 
-		peopleBankAccountEntity.setForenames(forenames);
-		peopleBankAccountEntity.setSurname(surname);
-		peopleBankAccountEntity.setHomeAddress(homeAddress);
-		peopleBankAccountEntity.setDateOfBirth(dateOfBirth);
+		peopleBankAccount.setForenames(forenames);
+		peopleBankAccount.setSurname(surname);
+		peopleBankAccount.setHomeAddress(homeAddress);
+		peopleBankAccount.setDateOfBirth(dateOfBirth);
 
-		return new ResponseEntity<>(service.getFinance(peopleBankAccountEntity), HttpStatus.OK);
+		return new ResponseEntity<>(service.findPeopleBankAccount(peopleBankAccount), HttpStatus.OK);
 	}
 }

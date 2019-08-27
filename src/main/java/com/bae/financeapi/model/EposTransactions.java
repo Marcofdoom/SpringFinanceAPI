@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -16,22 +18,27 @@ public class EposTransactions {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 
-	private Long eposId;
+	@ManyToOne
+	@JoinColumn(name = "epos_id")
+	private EposPoint eposId;
 
-	private Long bankcardNumber;
+	@ManyToOne
+	@JoinColumn(name = "bankcard_number")
+	private Bankcard bankcardNumber;
 
 	private Long payeeAccount;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date timestamp;
 
-	private Long amount;
+	private Float amount;
 
 	public EposTransactions() {
 
 	}
 
-	public EposTransactions(Long eposId, Long bankcardNumber, Long payeeAccount, Date timestamp, Long amount) {
+	public EposTransactions(EposPoint eposId, Bankcard bankcardNumber, Long payeeAccount, Date timestamp,
+			Float amount) {
 		this.eposId = eposId;
 		this.bankcardNumber = bankcardNumber;
 		this.payeeAccount = payeeAccount;
@@ -47,19 +54,19 @@ public class EposTransactions {
 		Id = id;
 	}
 
-	public Long getEposId() {
+	public EposPoint getEposId() {
 		return eposId;
 	}
 
-	public void setEposId(Long eposId) {
+	public void setEposId(EposPoint eposId) {
 		this.eposId = eposId;
 	}
 
-	public Long getBankcardNumber() {
+	public Bankcard getBankcardNumber() {
 		return bankcardNumber;
 	}
 
-	public void setBankcardNumber(Long bankcardNumber) {
+	public void setBankcardNumber(Bankcard bankcardNumber) {
 		this.bankcardNumber = bankcardNumber;
 	}
 
@@ -79,11 +86,11 @@ public class EposTransactions {
 		this.timestamp = timestamp;
 	}
 
-	public Long getAmount() {
+	public Float getAmount() {
 		return amount;
 	}
 
-	public void setAmount(Long amount) {
+	public void setAmount(Float amount) {
 		this.amount = amount;
 	}
 }
