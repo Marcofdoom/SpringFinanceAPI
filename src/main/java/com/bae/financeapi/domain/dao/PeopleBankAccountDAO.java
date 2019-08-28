@@ -9,11 +9,11 @@ import com.bae.financeapi.domain.model.PeopleBankAccount;
 import com.bae.financeapi.domain.repository.PeopleBankAccountRepository;
 
 @Repository
-public class PeopleBankAccountDao {
+public class PeopleBankAccountDAO {
 
 	private PeopleBankAccountRepository peopleBankAccountRepository;
 
-	public PeopleBankAccountDao(PeopleBankAccountRepository peopleBankAccountRepository) {
+	public PeopleBankAccountDAO(PeopleBankAccountRepository peopleBankAccountRepository) {
 		this.peopleBankAccountRepository = peopleBankAccountRepository;
 	}
 

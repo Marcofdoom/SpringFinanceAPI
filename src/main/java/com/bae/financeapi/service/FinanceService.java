@@ -6,15 +6,15 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
-import com.bae.financeapi.domain.dao.PeopleBankAccountDao;
+import com.bae.financeapi.domain.dao.PeopleBankAccountDAO;
 import com.bae.financeapi.domain.model.PeopleBankAccount;
 
 @Service
 public class FinanceService {
 
-	private PeopleBankAccountDao peopleBankAccountDao;
+	private PeopleBankAccountDAO peopleBankAccountDao;
 
-	public FinanceService(PeopleBankAccountDao peopleBankAccountDao) {
+	public FinanceService(PeopleBankAccountDAO peopleBankAccountDao) {
 		this.peopleBankAccountDao = peopleBankAccountDao;
 	}
 
